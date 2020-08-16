@@ -36,10 +36,15 @@ export type TestClientConfig = {
   extendMockResponse?: ResponseOptions;
 };
 
+export type TestResult<T extends object = {}> = {
+  data?: T
+  error?: any
+}
+
 export type TestQuery = <T extends object = {}, V extends object = {}>(
   operation: StringOrAst,
   { variables }?: Options<V>
-) => Promise<T>;
+) => Promise<TestResult>;
 
 export type TestSetOptions = (options: {
   request?: RequestOptions;
@@ -121,8 +126,7 @@ export function createTestClient({
       },
       request: convertNodeHttpToRequest(req)
     });
-
-    return JSON.parse(graphqlResponse) as T;
+    return JSON.parse(graphqlResponse) as TestResult<T>;
   };
 
   return {
