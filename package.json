@@ -1,11 +1,11 @@
 {
-  "name": "apollo-server-integration-testing",
+  "name": "@mbalex99/apollo-server-integration-testing",
   "version": "2.3.0",
   "description": "Test helper for writing apollo-server integration tests",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/zapier/apollo-server-integration-testing.git",
-  "author": "Vitor Balocco <vitor.balocco@zapier.com>",
+  "author": "Maximilian Alexander <max@ditto.live>",
   "keywords": [
     "GraphQL",
     "Apollo",
@@ -18,10 +18,10 @@
   "private": false,
   "scripts": {
     "clean": "rm -rf dist/",
-    "compile": "tsc",
-    "prepublish": "yarn clean && yarn compile",
-    "postinstall": "tsc",
-    "dev": "tsc --watch"
+    "compile": "tsc -P ./tsconfig.json",
+    "prepublish": "npm run clean && npm run compile",
+    "postinstall": "npm run compile",
+    "dev": "tsc --watch -P ./tsconfig.json"
   },
   "dependencies": {
     "apollo-server-core": "^2.9.13",
