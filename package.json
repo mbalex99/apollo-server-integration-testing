@@ -1,5 +1,5 @@
 {
-  "name": "@mbalex99/apollo-server-integration-testing",
+  "name": "apollo-server-integration-testing",
   "version": "2.3.0",
   "description": "Test helper for writing apollo-server integration tests",
   "main": "dist/index.js",
