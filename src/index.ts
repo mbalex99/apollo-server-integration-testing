@@ -38,7 +38,7 @@ export type TestClientConfig = {
 
 export type TestResult<T extends object = {}> = {
   data?: T
-  error?: any
+  errors?: any
 }
 
 export type TestQuery = <T extends object = {}, V extends object = {}>(
