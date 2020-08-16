@@ -20,6 +20,7 @@
     "clean": "rm -rf dist/",
     "compile": "tsc",
     "prepublish": "yarn clean && yarn compile",
+    "postinstall": "tsc",
     "dev": "tsc --watch"
   },
   "dependencies": {
